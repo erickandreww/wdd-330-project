@@ -6,6 +6,13 @@ export function setLocalStorage(key) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
+export function renderWithTemplate(templateFn, parentElement, data, callbackD, position = "afterbegin"){
+    parentElement.insertAdjacentHTML(position, templateFn);
+    if (callbackD){
+        callbackD(data);
+      }
+}
+
 async function loadTemplate(path) {
     const res = await fetch(path);
     const html = await res.text();
@@ -15,9 +22,9 @@ async function loadTemplate(path) {
 }
   
 export async function loadHeaderFooter() {
-    const headerTemplate = await loadTemplate("../partials/header.html");
+    const headerTemplate = await loadTemplate("/public/partials/header.html");
     const headerElement = document.getElementById("main-header");
-    const footerTemplate = await loadTemplate("../partials/footer.html");
+    const footerTemplate = await loadTemplate("/public/partials/footer.html");
     const footerElement = document.getElementById("main-footer");
     renderWithTemplate(headerTemplate,headerElement);
     renderWithTemplate(footerTemplate, footerElement);
