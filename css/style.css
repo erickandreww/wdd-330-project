@@ -1,0 +1,155 @@
+.team img {
+    width: 55px;
+}
+
+.hero {
+    position: relative;
+  }
+  .hero #hero-img {
+    max-width: 100%;
+    left: calc(50% - 60px);
+    bottom: -10px;
+    background-color: white;
+  }
+
+
+/* Header */
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    background: #333;
+    color: #fff;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+#main-header .logo {
+    float: left;
+}
+
+#main-header .team {
+    float: right;
+}
+
+/* Logo */
+#main-header .logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Text */
+.introduction {
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+
+/* Type grid */
+.type-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.type-grid li {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.type-grid li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+.type-grid li img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 2em;
+    display: flex;
+    padding: 0 10px;
+    background: #333;
+    color: #fff;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+footer img {
+    width: 80px;
+    padding: 0 10px;
+}
+
+.divider {
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+@media screen and (min-width: 500px) {
+    body {
+        max-width: 1080px;
+        margin: auto;
+    }
+
+    .team img {
+        width: 62px;
+    }
+        .type-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .type-grid li img {
+        width: 80px;
+    }
+}
+
+/* Bellow the css made by IA */
+
+/* Main content */
+/* .main {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+} */
+
+/* .hero img {
+    width: 100%;
+    height: auto;
+} */
+
+/* Introduction */
+/* .introduction {
+    padding: 20px 0;
+}
+
+.introduction h2 {
+    font-size: 24px;
+}
+
+.introduction h3 {
+    font-size: 18px;
+} */
+
+/* Footer */
+/* #main-footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+} */
