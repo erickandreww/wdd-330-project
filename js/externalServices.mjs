@@ -18,13 +18,13 @@ export default class ExternalServices {
   async getData(category) {
     const response = await fetch(baseURL + `pokemon/${category}`);
     const data = await convertToJson(response);
-    return data.Result;
+    return data;
   }
 
   async getType(category) {
     const response = await fetch(baseURL + `type/${category}`);
     const data = await convertToJson(response);
-    return data.Result;
+    return data.pokemon;
   }
 
   async findPokeById(id) {

@@ -1,3 +1,7 @@
+export function qs(selector, parent = document) {
+    return parent.querySelector(selector);
+}
+
 export function getLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
 }
@@ -5,6 +9,31 @@ export function getLocalStorage(key) {
 export function setLocalStorage(key) {
     localStorage.setItem(key, JSON.stringify(data));
 }
+
+export function setClick(selector, callback) {
+    qs(selector).addEventListener("touchend", (event) => {
+      event.preventDefault();
+      callback();
+    });
+    qs(selector).addEventListener("click", callback);
+}
+
+export function getParams(param){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const pokemon = urlParams.get(param);
+    return pokemon;
+}
+
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false ){
+    const htmlStrings = list.map(templateFn);
+    if (clear){
+      parentElement.innerHTML = "";
+    }
+  
+    parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
+  
 
 export function renderWithTemplate(templateFn, parentElement, data, callbackD, position = "afterbegin"){
     parentElement.insertAdjacentHTML(position, templateFn);
@@ -30,9 +59,3 @@ export async function loadHeaderFooter() {
     renderWithTemplate(footerTemplate, footerElement);
 }
 
-export function getParams(param){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const pokemon = urlParams.get(param);
-    return pokemon;
-}
