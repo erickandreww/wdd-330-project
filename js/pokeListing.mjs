@@ -1,12 +1,13 @@
 import { renderListWithTemplate } from "./utils.mjs";
+import ExternalServices from "./externalServices.mjs";
 
 function pokeCardTemplate(poke) {
-    const path = poke.pokemon;
+    const newPath = poke.pokemon;
     return `
-    <li class="product-card">
-        <a href="../product_pages/index.html?product=${path.name}">
-            <img src="" alt="${path.name}" />
-            <h3>${path.name}</h3>
+    <li class="poke-card">
+        <a href="/pokemons/index.html?pokemon=${newPath.name}">
+            <img src="" alt="${newPath.name}" />
+            <h3>${newPath.name}</h3>
         </a>
     </li>`;
 }

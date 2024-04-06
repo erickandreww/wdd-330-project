@@ -25,13 +25,16 @@ export function getParams(param){
     return pokemon;
 }
 
-export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false ){
-    const htmlStrings = list.map(templateFn);
-    if (clear){
-      parentElement.innerHTML = "";
+export async function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false ){
+    const htmlStrings = await list.map(templateFn);
+
+    if (htmlStrings) {
+        console.log(htmlStrings);
+        if (clear){
+        parentElement.innerHTML = "";
+        }
+        await parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
     }
-  
-    parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
   
 
