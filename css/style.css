@@ -72,8 +72,8 @@ body {
 }
 
 
-/* Type grid */
-.type-grid {
+/* Type grid & Poke-list */
+.type-grid, .poke-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -82,7 +82,11 @@ body {
     gap: 20px;
 }
 
-.type-grid li {
+.poke-list {
+    margin-top: 50px;
+}
+
+.type-grid li, .poke-list li {
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -90,13 +94,13 @@ body {
     background-color: #fff;
 }
 
-.type-grid li a {
+.type-grid li a, .poke-list li a {
     display: block;
     text-decoration: none;
     color: #333;
 }
 
-.type-grid li img {
+.type-grid li img, .poke-list li img {
     width: 100px;
     height: auto;
     margin-bottom: 10px;
