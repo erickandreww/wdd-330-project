@@ -1,12 +1,13 @@
 :root {
-    --font-body: Arial, Helvetica, sans-serif;
-    --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    /* fonts */
+    --font-body: "EB Garamond", sans-serif;
+    --font-headline: 'Roboto', sans-serif;
     /* colors */
-    --primary-color: #f0a868;
-    --secondary-color: #525b0f;
-    --tertiary-color: #a4b8c4;
-    --light-grey: #d0d0d0;
-    --dark-grey: #303030;
+    --color-one: #0D1B2A;
+    --color-two: #9AE0F1;
+    --color-three: #E6E621;
+    --color-four: #C9CF72;
+    --color-five: #547E8E;
   
     /* sizes */
     --font-base: 18px;

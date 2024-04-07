@@ -27,9 +27,7 @@ export function getParams(param){
 
 export async function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false ){
     const htmlStrings = await list.map(templateFn);
-
     if (htmlStrings) {
-        console.log(htmlStrings);
         if (clear){
         parentElement.innerHTML = "";
         }
