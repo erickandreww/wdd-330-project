@@ -26,18 +26,12 @@ export default class Pokedex {
     }
 }
 
-// Create a Team page
-// limit the number of pokemons in the team for 6
-// add a remove pokemon from the localStorage (the team). 
-// add a message qhen you try to add another pokemon to go to the team page and remove
-// add a checkpoint page
-// add a success page. 
-// change to pokeDex
-// change the icon
+// change the icon of pokeball to pokedex
+// adjust the Catch! button
 // construct a better interface for the PokeDex
-// change the mjs and mjs of team to pokedex
-// change the addtoteam to capture. 
 // // seen and captured?
-// a checkou page, asking the user information
+// don't allow add the same pokemon to pokedex. 
+
+// a checkout page, asking the user information
 // after get this information, led the user to a success page showing a card with how much pokemons he captured, his trainer level and some of his info.
 // solve the pokemon images (to not show that pokemons);
