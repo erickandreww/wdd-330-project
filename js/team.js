@@ -1,6 +1,6 @@
 import { loadHeaderFooter, getLocalStorage } from "./utils.mjs";
-import PokeTeam from "./PokeTeam.mjs";
+import Pokedex from "./Pokedex.mjs";
 
-const team = new PokeTeam("poke-team", ".team-list");
-team.init();
+const pokedex = new Pokedex("pokedex", ".pokedex-list");
+pokedex.init();
 loadHeaderFooter();

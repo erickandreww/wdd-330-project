@@ -33,7 +33,7 @@ function pokeTemplate(pokemon) {
         </div>
     </section>
     <div class="pokemon-detail__add">
-        <button id="addToTeam" data-id="${pokemon.id}">Add to Team</button>
+        <button id="addToPokedex" data-id="${pokemon.id}">Catch!</button>
     </div>`
     } else {
         return `<section class="poke-info">
@@ -64,7 +64,7 @@ function pokeTemplate(pokemon) {
         </div>
     </section>
     <div class="pokemon-detail__add">
-        <button id="addToTeam" data-id="${pokemon.id}">Add to Team</button>
+        <button id="addToPokedex" data-id="${pokemon.id}">Catch!</button>
     </div>`
     }
 }
@@ -79,7 +79,7 @@ export default class PokeInfo {
     async init() {
         this.pokemon = await this.dataSource.getData(this.pokeId);
         this.renderPokeTemplate("main");
-        document.getElementById("addToTeam").addEventListener("click", this.addToTeam.bind(this));
+        document.getElementById("addToPokedex").addEventListener("click", this.addToPokedex.bind(this));
     }
 
     renderPokeTemplate(selector) {
@@ -87,12 +87,12 @@ export default class PokeInfo {
         element.insertAdjacentHTML("afterBegin", pokeTemplate(this.pokemon))
     }
     
-    addToTeam() {
-        let content = getLocalStorage("poke-team");
+    addToPokedex() {
+        let content = getLocalStorage("pokedex");
         if (!content) {
             content = [];
         }
         content.push(this.pokemon);
-        setLocalStorage("poke-team", content); 
+        setLocalStorage("pokedex", content); 
     }
 }

@@ -1,15 +1,15 @@
 import { getLocalStorage } from "./utils.mjs";
 
-function teamPokeTemplate(pokemon) {
+function pokedexMemberTemplate(pokemon) {
     return `<li>
-        <a href="/pokemons/index.html?pokemon=${pokemon.name}" class="team-member-img">
+        <a href="/pokemons/index.html?pokemon=${pokemon.name}" class="member-img">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="${pokemon.name}">
         </a>
         <h2 class="poke_name">${pokemon.name}</h2>
     </li>`
 }
 
-export default class PokeTeam {
+export default class Pokedex {
     constructor(key, selector){
         this.key = key;
         this.selector = selector;
@@ -21,7 +21,7 @@ export default class PokeTeam {
     }
     
     renderContent(list) {
-        let htmlStrings = list.map((pokemon) => teamPokeTemplate(pokemon));
+        let htmlStrings = list.map((pokemon) => pokedexMemberTemplate(pokemon));
         document.querySelector(this.selector).innerHTML = htmlStrings.join("");
     }
 }
@@ -40,3 +40,4 @@ export default class PokeTeam {
 // // seen and captured?
 // a checkou page, asking the user information
 // after get this information, led the user to a success page showing a card with how much pokemons he captured, his trainer level and some of his info.
+// solve the pokemon images (to not show that pokemons);
