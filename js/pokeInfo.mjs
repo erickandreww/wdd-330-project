@@ -39,7 +39,7 @@ function pokeTemplate(pokemon) {
         </button></div>
     </section>`} 
     else {
-        return `<section class="poke-info">
+        return `<section id="poke-info" class="info-page">
         <div class="top">
             <h2>${pokemon.name[0].toUpperCase()+pokemon.name.substring(1)}</h2>
             <h3>Id: ${pokemon.id}</h3>
@@ -66,7 +66,7 @@ function pokeTemplate(pokemon) {
             <p>Base Experience: ${pokemon.base_experience}</p>
         </div>
     </section>
-    <section>
+    <section class="info-page">
     <div class="pokemon-detail__add">
     <button id="addToPokedex" class="pokeball-button" data-id="${pokemon.id}">
         <span class="button-text">Catch!</span>
