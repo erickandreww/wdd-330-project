@@ -26,8 +26,9 @@ export default class Pokedex {
     }
 }
 
-// change the icon of pokeball to pokedex
 // adjust the Catch! button
+// add some html introduction and text to the pokePage
+// add some css for them
 // construct a better interface for the PokeDex
 // // seen and captured?
 // don't allow add the same pokemon to pokedex. 
