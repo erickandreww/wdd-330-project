@@ -30,7 +30,11 @@ function pokeTemplate(pokemon) {
         <div class="bot">
             <p>Height: ${pokemon.height} | Weight: ${pokemon.weight}</p>
             <p>Base Experience: ${pokemon.base_experience}</p>
-        </div>`
+        </div>
+    </section>
+    <div class="pokemon-detail__add">
+        <button id="addToTeam" data-id="${pokemon.id}">Add to Team</button>
+    </div>`
     } else {
         return `<section class="poke-info">
         <div class="top">
@@ -57,25 +61,38 @@ function pokeTemplate(pokemon) {
         <div class="bot">
             <p>Height: ${pokemon.height} | Weight: ${pokemon.weight}</p>
             <p>Base Experience: ${pokemon.base_experience}</p>
-        </div>`
+        </div>
+    </section>
+    <div class="pokemon-detail__add">
+        <button id="addToTeam" data-id="${pokemon.id}">Add to Team</button>
+    </div>`
     }
 }
 
 export default class PokeInfo {
     constructor(pokeId, dataSource) {
         this.pokeId = pokeId;
+        this.pokemon = [];
         this.dataSource = dataSource;
     }
 
     async init() {
-        const pokemon = await this.dataSource.getData(this.pokeId);
-        console.log(pokemon);
-        this.renderPokeTemplate("main", pokemon);
+        this.pokemon = await this.dataSource.getData(this.pokeId);
+        this.renderPokeTemplate("main");
+        document.getElementById("addToTeam").addEventListener("click", this.addToTeam.bind(this));
     }
 
-    renderPokeTemplate(selector, pokemon) {
-        this.pokemon = pokemon;
+    renderPokeTemplate(selector) {
         const element = document.querySelector(selector);
         element.insertAdjacentHTML("afterBegin", pokeTemplate(this.pokemon))
+    }
+    
+    addToTeam() {
+        let content = getLocalStorage("poke-team");
+        if (!content) {
+            content = [];
+        }
+        content.push(this.pokemon);
+        setLocalStorage("poke-team", content); 
     }
 }
