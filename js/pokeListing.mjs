@@ -10,7 +10,7 @@ function pokeCardTemplate(poke) {
     <li class="poke-card">
         <a href="/pokemons/index.html?pokemon=${path.name}">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${path.name}" />
-            <h3>${path.name}</h3>
+            <h3>${path.name[0].toUpperCase()+path.name.substring(1)}</h3>
         </a>
     </li>`;
 }
@@ -25,6 +25,7 @@ export default class PokeListing {
     async init() {
         const list = await this.dataSource.getType(this.category);
         renderListWithTemplate(pokeCardTemplate, this.listElement, list);
+        // title.innerHTML = "Top Products: " + this.category.charAt(0).toUpperCase() + this.category.slice(1);
     }
 
 }
