@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokemon API | Trainer Info</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <script src="/js/trainer-form.js" type="module"></script>
+    </head>
+    <body>
+        <header id="main-header"></header>
+        <main class="divider">
+            <h2>Trainer Info Form</h2>
+            <form name="trainer">
+                <fieldset>
+                    <legend>Insert Your Information</legend>
+                    <div class="check-name">
+                        <label for="fname">First Name<input type="text" name="fname" required></label>
+                        <label for="lname">Last Name<input type="text" name="lname" required></label>
+                        <label for="lname">Age<input type="number" name="age" min="1" max="120" required></label>
+                      </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Select Your Region</legend>
+                    <div class="select-region">
+                        <label for="region"><input type="radio" name="kanto" value="kanto">Kanto</label>
+                        <label for="region"><input type="radio" name="johto" value="johto">Johto</label>
+                        <label for="region"><input type="radio" name="hoenn" value="hoenn">Hoenn</label>
+                        <label for="region"><input type="radio" name="sinnoh" value="sinnoh">Sinnoh</label>
+                        <label for="region"><input type="radio" name="unova" value="unova">Unova</label>
+                        <label for="region"><input type="radio" name="kalos" value="kalos">Kalos</label>
+                        <label for="region"><input type="radio" name="alola" value="alola">Alola</label>
+                        <label for="region"><input type="radio" name="galar" value="galar">Galar</label>
+                        <label for="region"><input type="radio" name="paldea" value="paldea">Paldea</label>
+                      </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Actual Trainer Level</legend>
+                    <label for="captured">Number of Pokémon Caught: </label>
+                    <p id="captured"></p>
+                    <label for="trainer-level">Trainer Level: </label>
+                    <p id="trainer-level"></p>
+                </fieldset>
+                <button id="formSubmit" type="submit">Send Trainer Form</button>
+            </form>
+        </main>
+        <footer id="main-footer"></footer>
+    </body>
+</html>
