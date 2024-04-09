@@ -25,7 +25,8 @@ export default class PokeListing {
     async init() {
         const list = await this.dataSource.getType(this.category);
         renderListWithTemplate(pokeCardTemplate, this.listElement, list);
-        // title.innerHTML = "Top Products: " + this.category.charAt(0).toUpperCase() + this.category.slice(1);
+        const title = document.querySelector("#type-h2"); 
+        title.innerHTML = this.category[0].toUpperCase()+this.category.substring(1);
     }
 
 }

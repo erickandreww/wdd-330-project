@@ -26,13 +26,15 @@ export default class Pokedex {
     }
 }
 
-// adjust the Catch! button
+
+
+// add a pokemon total captured (in the pokedex/localStorage)
+// add a alert that alert the user that Pokémon has already been captured.
 // add some html introduction and text to the pokePage
 // add some css for them
 // construct a better interface for the PokeDex
 // // seen and captured?
-// don't allow add the same pokemon to pokedex. 
-
 // a checkout page, asking the user information
 // after get this information, led the user to a success page showing a card with how much pokemons he captured, his trainer level and some of his info.
+
 // solve the pokemon images (to not show that pokemons);

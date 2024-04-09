@@ -34,8 +34,8 @@ function pokeTemplate(pokemon) {
     </section>
     <section class="info-page">
         <div class="pokemon-detail__add">
-        <button id="addToPokedex" class="pokeball-button" data-id="${pokemon.id}">
-            <span class="button-text">Catch!</span>
+        <button id="addToPokedex" class="pokeball-button" data-id="${pokemon.id}"
+        onclick=""><span class="button-text">Catch!</span>
         </button></div>
     </section>`} 
     else {
@@ -68,8 +68,8 @@ function pokeTemplate(pokemon) {
     </section>
     <section class="info-page">
     <div class="pokemon-detail__add">
-    <button id="addToPokedex" class="pokeball-button" data-id="${pokemon.id}">
-        <span class="button-text">Catch!</span>
+    <button id="addToPokedex" class="pokeball-button" data-id="${pokemon.id}"
+    onclick=""><span class="button-text">Catch!</span>
     </button></div>
     </section>`}
 }
@@ -97,7 +97,21 @@ export default class PokeInfo {
         if (!content) {
             content = [];
         }
-        content.push(this.pokemon);
-        setLocalStorage("pokedex", content); 
+        let duplicate = "";
+        content.map((item) => {
+            if (item.name === this.pokemon.name) {
+                console.log(item.name);
+                console.log(this.pokemon.name);
+                duplicate = "null";
+            }
+        })
+        if (duplicate === "null") {
+            // const message = "You've already captured this Pokémon!";
+        } else 
+        {
+            content.push(this.pokemon);
+            setLocalStorage("pokedex", content); 
+            // const message = "Caught!";
+        }
     }
 }
