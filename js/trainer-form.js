@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import TrainerCheck from "./trainerCheck.mjs";
+import TrainerCheck from "./TrainerCheck.mjs";
 
 loadHeaderFooter();
 

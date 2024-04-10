@@ -61,7 +61,11 @@ export default class TrainerCheck {
         json["trainer_level"] = this.trainerLevel;
         console.log(json);
         setLocalStorage("trainer", json);
-        location.assign("/trainer-info/trainer.html");
-    }
+        if (json.age === '' || json.fname === '' || json.lname === '') { 
+            console.log(alert("Missing Information"))
+        } else { 
+            location.assign("/trainer-info/trainer.html");
+        }
+    }   
 
 }
