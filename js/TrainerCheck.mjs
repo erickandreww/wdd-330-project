@@ -34,17 +34,17 @@ export default class TrainerCheck {
     }
 
     trainerLevelCheck() {
-        if (this.poketotal < 25) {
+        if (this.poketotal < 5) {
             this.trainerLevel = "Beginner";
         }
-        else if (this.poketotal <= 50) {
+        else if (this.poketotal <= 10) {
             this.trainerLevel = "Intermediate";
         }
-        else if (this.poketotal <= 100) {
+        else if (this.poketotal <= 18) {
             this.trainerLevel = "Experxt";
         }
-        else if (this.poketotal <= 200) {
-            this.trainerLevel = "Legendary";
+        else if (this.poketotal <= 21) {
+            this.trainerLevel = "Leader";
         }
     }
 

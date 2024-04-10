@@ -369,13 +369,6 @@ body {
 }
 
 
-/* Resetting default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Styling the form */
 form[name="trainer"] {
   width: 80%;
