@@ -100,8 +100,6 @@ export default class PokeInfo {
         let duplicate = "";
         content.map((item) => {
             if (item.name === this.pokemon.name) {
-                console.log(item.name);
-                console.log(this.pokemon.name);
                 duplicate = "null";
             }
         })
@@ -110,6 +108,10 @@ export default class PokeInfo {
         } else 
         {
             content.push(this.pokemon);
+            content.sort(function(a,b){
+                return a.id - b.id;
+                }
+            );
             setLocalStorage("pokedex", content); 
             // const message = "Caught!";
         }

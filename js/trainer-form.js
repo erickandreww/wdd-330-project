@@ -9,6 +9,5 @@ tcheck.init();
 document.querySelector("#formSubmit").addEventListener("click", (e) => {
     e.preventDefault();
     tcheck.check();
-    console.log("pokemon");
 })
 

@@ -6,6 +6,7 @@ function pokedexMemberTemplate(pokemon) {
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="${pokemon.name}">
         </a>
         <h2 class="poke_name">${pokemon.name}</h2>
+        <h3>Id: ${pokemon.id}</h3>
     </li>`
 }
 
